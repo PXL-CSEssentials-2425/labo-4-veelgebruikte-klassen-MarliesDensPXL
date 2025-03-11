@@ -28,11 +28,13 @@ namespace PasswordMeter
         public MainWindow()
         {
             InitializeComponent();
+            resultTextBlock.Foreground = Brushes.Green;
+            resultTextBlock.Text = "PXL";
         }
 
         private void passwordMeterButton_Click(object sender, RoutedEventArgs e)
         {
-
+            resultTextBlock.Foreground = Brushes.Red;
         }
     }
 }
