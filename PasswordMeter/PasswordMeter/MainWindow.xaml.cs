@@ -44,12 +44,19 @@ namespace PasswordMeter
             bool containsUsername = !password.Contains(username);
 
             if (passwordLength && containsDigit && containsUsername) // aan drie voorwaarden voldaan 
+            {
+                resultTextBlock.Foreground = Brushes.Green;
                 resultTextBlock.Text = "Dit is een sterk wachtwoord";
+            }
             else if
                 ((passwordLength && containsDigit) || (passwordLength && containsUsername) || (containsDigit && containsUsername)) // aan twee voorwaarden voldaan
+            {
+                resultTextBlock.Foreground = Brushes.Orange;
                 resultTextBlock.Text = "Dit wachtwoord is oké";
+            }
             else
             {
+                resultTextBlock.Foreground = Brushes.Red;
                 resultTextBlock.Text = "Wachtwoord is zwak";
                 Random rnd = new Random();
                 StringBuilder sb = new StringBuilder();
